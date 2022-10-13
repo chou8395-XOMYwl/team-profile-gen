@@ -58,7 +58,43 @@ const generateEngineer = function (engineer) {
     `
 };
 
-const generateHTML = function (employeesCard) {
+generateHTML = (data) => {
+
+    teamArray = [];
+
+    for (let i = 0; i < data.length; i++) {
+        const role = employee.getRole();
+        const employee = data[i];
+
+        
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            teamArray.push(internCard);
+        }
+
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            teamArray.push(managerCard);
+        }
+
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            teamArray.push(engineerCard);
+        }
+
+    }
+
+    const employeesCard = teamArray.join('')
+
+    const teamProfileGenerator = generateHTMLPage(employeesCard);
+    return teamProfileGenerator;
+
+}
+
+const generateHTMLPage = function (employeesCard) {
     return `<!DOCTYPE html>
         <html lang="en">
             <head>
