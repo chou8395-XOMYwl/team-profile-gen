@@ -2,7 +2,7 @@ const generateIntern = function (intern) {
     return `
     <div class="col-md-4 mt-5 col-sm-6">
         <div class="card shadow-lg mb-5 bg-white rounded">
-            <div class="card-header bg-primary">
+            <div class="card-header bg-danger">
                 <h4>${intern.name}</h4>
                 <h5>Intern <i class=""fas fa-user-graduate""></i></h5>
             </div>
@@ -22,7 +22,7 @@ const generateManager = function (manager) {
     return `
     <div class="col-md-4 mt-5 col-sm-6">
         <div class="card shadow-lg mb-5 bg-white rounded">
-            <div class="card-header bg-primary">
+            <div class="card-header bg-danger">
                 <h4>${manager.name}</h4>
                 <h5>Manager <i class="fa-solid fa-list-check"></i></h5>
             </div>
@@ -42,7 +42,7 @@ const generateEngineer = function (engineer) {
     return `
     <div class="col-md-4 mt-5 col-sm-6">
         <div class="card shadow-lg mb-5 bg-white rounded">
-            <div class="card-header bg-primary">
+            <div class="card-header bg-danger">
                 <h4>${engineer.name}</h4>
                 <h5>Engineer <i class="fas fa-glasses"></i></h5>
             </div>
@@ -63,8 +63,8 @@ generateHTML = (data) => {
     teamArray = [];
 
     for (let i = 0; i < data.length; i++) {
-        const role = employee.getRole();
         const employee = data[i];
+        const role = employee.getRole();
 
         
         if (role === 'Intern') {
@@ -109,8 +109,8 @@ const generateHTMLPage = function (employeesCard) {
             </head>
             <body>
                 <div class="header">
-                    <div class="jumbotron bg-warning">
-                        <h1 class="display-4 text-white text-center">My Team</h1>
+                    <div class="jumbotron bg-success">
+                        <h1 class="display-4 text-white text-center">Team Profiles</h1>
                     </div>
                 </div>
                 <div class="container-body container-fluid">
